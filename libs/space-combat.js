@@ -416,7 +416,7 @@ function Stage() {
 		
 		frame_count = (frame_count + 1) % 100;
 		
-		return pos + 2;
+		return pos + 4;
 	};
 
 	this.colision = function () {
