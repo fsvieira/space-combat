@@ -84,7 +84,7 @@ function Actor (vel, actor_class) {
 	
 	this.update = function () {
 		var xx=0, yy=0;
-		var frame = 3;
+		var frame = 13;
 		if (this.x < 0) {xx = -frame;}
 		if (this.y < 0) {yy = -frame;}
 		
@@ -166,7 +166,7 @@ function Player () {
 	Actor.call(this, 10);
 	var _update = this.update;
 	var fire_frame = 0;
-	var fire_interval = 30; 
+	var fire_interval = 10; 
 	
 	var hits = 10;
 	this.points = 0;
@@ -450,8 +450,10 @@ $(document).ready(function(){
 	var pos = 0;
 	
 	function mainLoop () {
-		pos = stage.update(pos);
-		requestAnimationFrame(mainLoop);
+		setTimeout (function () {
+			pos = stage.update(pos);
+			requestAnimationFrame(mainLoop);
+		}, 1000/30);
 	};
 	
 	requestAnimationFrame(mainLoop);
